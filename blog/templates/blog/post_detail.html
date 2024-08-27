@@ -1,0 +1,25 @@
+{% extends 'blog/base.html' %}
+
+{% block content %}
+<h2>Information about post # {{post.id}}</h2>
+<hr>
+<p>Author - {{post.author}}</p>
+<p>Title - {{post.title}}</p>
+<p>Post text</p>
+<p>{{post.text}}</p>
+
+{% if post.image %}
+    <img width="300px" height="200px" src="{{post.image.url}}">
+{% endif %}
+
+<br>
+<p>Created at {{post.created_at}}</p>
+
+<div>
+    <a href="{% url 'blog:post_edit' pk=post.id %}" class="btn btn-primary">Edit post</a>
+    <form action="{% url 'blog:post_delete' pk=post.id %}" method="get" style="display:inline">
+        <button type="submit" class="btn btn-danger">Delete post</button>
+    </form>
+</div>
+
+{% endblock content %}
