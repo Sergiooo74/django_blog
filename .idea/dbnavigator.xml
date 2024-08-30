@@ -39,6 +39,7 @@
         <condition column="id" operator="=" value="" active="true" />
       </filter>
     </filter-actions>
+    <filter-actions connection-id="21847998-c9d2-47cb-9135-feba1b8ca3f0" dataset="main.users_customuser" active-filter-id="EMPTY_FILTER" />
   </component>
   <component name="DBNavigator.Project.ObjectQuickFilterManager">
     <last-used-operator value="EQUAL" />
@@ -149,7 +150,7 @@
           <description value="" />
           <database-type value="SQLITE" />
           <config-type value="BASIC" />
-          <database-version value="9999.0" />
+          <database-version value="3.44" />
           <driver-source value="BUNDLED" />
           <driver-library value="" />
           <driver value="" />

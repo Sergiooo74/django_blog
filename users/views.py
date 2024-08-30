@@ -1,10 +1,13 @@
+from django.core.exceptions import PermissionDenied
 from django.shortcuts import render, redirect
-from django.contrib.auth import authenticate, login, logout
+from django.contrib.auth import authenticate, login, logout, get_user_model
 from django.contrib.auth.forms import AuthenticationForm
+from django.shortcuts import get_object_or_404
 
 from myblog.settings import LOGIN_REDIRECT_URL
 from .forms import UserRegistrationForm
 
+User = get_user_model()
 
 def register(request):
     # to register use POST method
@@ -41,8 +44,13 @@ def log_out(request):
     logout(request)
     return redirect('blog:index')
 
-def user_detail(request):
-    pass
+def user_detail(request, pk):
+    user = get_object_or_404(User, pk=pk)
+    if request.user != user:
+        raise PermissionDenied()
+
+    context = {'user':user, 'title': 'Profile information'}
+    return render(request, template_name='users/profile.html', context=context)
 
 
 def change_password(request):

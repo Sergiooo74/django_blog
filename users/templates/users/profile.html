@@ -1,0 +1,14 @@
+{% extends 'users/base.html' %}
+
+{% block content %}
+<h2>User information {{ user.username }}</h2>
+<hr>
+<div>Login - {{ user.username }}</div>
+<div>Name - {{ user.first_name }}</div>
+<div>Last name - {{ user.last_name }}</div>
+<div>E-mail - {{ user.email }}</div>
+<div>Phone - {{ user.phone }}</div>
+<hr>
+<div>Registration date - {{ user.data_joined|date:'d-m-Y H:1' }}</div>
+
+{% endblock content %}
