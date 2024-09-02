@@ -1,8 +1,9 @@
 from django.contrib.auth import get_user_model
 from django.db import models
+from django.urls import reverse
 from django.utils import timezone
+# from django.utils.text import slugify
 from slugify import slugify
-
 User = get_user_model()
 # Create your models here.
 class Post(models.Model):
@@ -18,8 +19,8 @@ class Post(models.Model):
         self.slug = slugify(self.title)
         super().save(*args, **kwargs)
 
-    def adsolute_url(self):
-        return reverse('blog:post_detail', kwargs={'slug':self.slug}):
+    def get_absolute_url(self):
+        return reverse('blog:post_detail', kwargs={'slug': self.slug})
 
     class Meta:
         verbose_name = "Post"           # table name
