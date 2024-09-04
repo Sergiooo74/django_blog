@@ -1,6 +1,7 @@
 from django.shortcuts import render, get_object_or_404, redirect
 from django.http import HttpResponse, JsonResponse
 from django.contrib.auth.decorators import login_required
+from django.core.paginator import Paginator
 
 from .forms import PostForm
 from .models import Post
@@ -41,10 +42,13 @@ def add_post(request):
 
 
 def post_list(request):
-    posts = Post.objects.all()
+    posts = Post.objects.all().order_by('-created_at')
+    paginator = Paginator(posts, 3)
+    page_number = request.GET.get('page')
+    page_obj = paginator.get_page(page_number)
     context = {
         'title': 'Posts',
-        'posts': posts
+        'page_obj': page_obj
     }
     return render(request, template_name='blog/posts.html', context=context)
 
