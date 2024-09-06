@@ -41,7 +41,7 @@ def log_in(request):
     return render(request, template_name='users/login.html', context=context)
 
 
-
+@login_required
 def log_out(request):
     logout(request)
     return redirect('blog:index')
@@ -52,7 +52,7 @@ def user_detail(request, pk):
     if request.user != user:
         raise PermissionDenied()
 
-    context = {'user':user, 'title': 'Profile information'}
+    context = {'user': user, 'title': 'Profile information'}
     return render(request, template_name='users/profile.html', context=context)
 
 

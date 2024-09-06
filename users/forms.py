@@ -36,5 +36,5 @@ class CustomPasswordChangeForm(forms.Form):
         if new_password_1 and new_password_2 and new_password_1 == new_password_2 and new_password_1 == old_password:
             raise forms.ValidationError("Password is as current password")
 
-        return  cleaned_data
+        return cleaned_data
 
