@@ -1,5 +1,15 @@
 {% extends 'blog/base.html' %}
 
 {% block content %}
-<a href="{% url 'blog:post_list'%}">Posts</a>
+<p>Добро пожаловать! Аренда коттеджей для отдыха на озере Ладога груглый год!</p>
+<a href="{% url 'blog:post_list'%}">Выберите свой вариант для отдыха!</a>
+
+<style>
+p {
+  font-size: 24px;
+ }
+</style>
+
+
 {% endblock content %}
+

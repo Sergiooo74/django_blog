@@ -1,10 +1,10 @@
 {% extends 'blog/base.html' %}
 
 {% block content %}
-<h2>Add a new post</h2>
+<h2>Добавить новое объявление</h2>
 <form action="" method="post" enctype="multipart/form-data">
     {% csrf_token %}
     {{ form.as_p }}
-    <button type="submit">Create a post</button>
+    <button type="submit">Опубликовать</button>
 </form>
 {% endblock content %}

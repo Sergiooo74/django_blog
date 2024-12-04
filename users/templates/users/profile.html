@@ -1,14 +1,14 @@
 {% extends 'users/base.html' %}
 
 {% block content %}
-<h2>User information {{ user.username }}</h2>
+<h3>Информация о пользователе {{ user.username }}</h3>
 <hr>
-<div>Login - {{ user.username }}</div>
-<div>Name - {{ user.first_name }}</div>
-<div>Last name - {{ user.last_name }}</div>
-<div>E-mail - {{ user.email }}</div>
-<div>Phone - {{ user.phone }}</div>
+<div>Логин - {{ user.username }}</div>
+<div>Имя - {{ user.first_name }}</div>
+<div>Фамилия - {{ user.last_name }}</div>
+<div>Эл. почта - {{ user.email }}</div>
+<div>Телефон - {{ user.phone }}</div>
 <hr>
-<div>Registration date - {{ user.data_joined|date:'d-m-Y H:1' }}</div>
+<!--<div>Registration date - {{ user.data_joined|date:'d-m-Y H:1' }}</div>-->
 
 {% endblock content %}

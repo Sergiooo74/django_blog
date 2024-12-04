@@ -15,10 +15,10 @@ def index(request):
 
 def about(request):
     context = {
-        "name": "Dmitri",
-        "lastname": "Gorin",
-        "email": "d.gorin@yandex.ru",
-        "title": "About site"
+        "name": "Сергей",
+        "lastname": "Рыбаков",
+        "email": "sergey.rybakov@mail.ru",
+        "title": "О сайте"
     }
     return render(request, template_name='blog/about.html', context=context)
 
