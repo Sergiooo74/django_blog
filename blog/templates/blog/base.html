@@ -19,6 +19,7 @@
   {% endif %}
 
   {% if user.is_authenticated %}
+  <a class="nav-link" href="{% url 'blog:add_post' %}">Новое</a>
   <a class="nav-link" href="{% url 'users:logout' %}">Выйти</a>
   <a class="nav-link" href="{% url 'users:detail' pk=user.pk %}">{{user.username}}</a>
   {% endif %}
